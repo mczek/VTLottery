@@ -1,14 +1,14 @@
 --- 
 title: "The Vermont Lottery"
 date: "`r Sys.Date()`"
-author: Michael Czekanski
+author: Michael Czekanski and Alex Lyford
 site: bookdown::bookdown_site
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
 description: "This is analysis of the Vermont Lottery."
 toc: true
-abstract: "The prevailing belief is that scratch tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence."
+abstract: "The prevailing belief is that scratch tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times when scratch tickets are worth playing with an arbitrary level of confidence."
 ---
 
 # Introduction
