@@ -1,7 +1,7 @@
 \PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
 \PassOptionsToPackage{hyphens}{url}
 %
-\documentclass[]{book}
+\documentclass[]{article}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
@@ -30,10 +30,11 @@
 \usepackage{hyperref}
 \hypersetup{
             pdftitle={The Vermont Lottery},
-            pdfauthor={Michael Czekanski, Middlebury College; Alex Lyford, Middlebury College},
+            pdfauthor={Michael Czekanski},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -110,37 +111,26 @@
 \bibliographystyle{apalike}
 
 \title{The Vermont Lottery}
-\author{Michael Czekanski, Middlebury College \and Alex Lyford, Middlebury College}
+\author{Michael Czekanski}
 \date{2020-01-16}
 
 \begin{document}
 \maketitle
+\begin{abstract}
+The prevailing belief is that scrath tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.
+\end{abstract}
 
 {
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 }
-\hypertarget{prerequisites}{%
-\chapter{Prerequisites}\label{prerequisites}}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
-
-The \textbf{bookdown} package can be installed from CRAN or Github:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{# or the development version}
-\CommentTok{# devtools::install_github("rstudio/bookdown")}
-\end{Highlighting}
-\end{Shaded}
-
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+The prevailing belief is that scrath tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.
 
 \hypertarget{intro}{%
-\chapter{Introduction}\label{intro}}
+\section{Introduction}\label{intro}}
 
 You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
 
@@ -211,28 +201,28 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
 
 \hypertarget{literature}{%
-\chapter{Literature}\label{literature}}
+\section{Literature}\label{literature}}
 
 Here is a review of existing methods.
 
 \hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
+\section{Methods}\label{methods}}
 
 We describe our methods in this chapter.
 
 \hypertarget{applications}{%
-\chapter{Applications}\label{applications}}
+\section{Applications}\label{applications}}
 
 Some \emph{significant} applications are demonstrated in this chapter.
 
 \hypertarget{example-one}{%
-\section{Example one}\label{example-one}}
+\subsection{Example one}\label{example-one}}
 
 \hypertarget{example-two}{%
-\section{Example two}\label{example-two}}
+\subsection{Example two}\label{example-two}}
 
 \hypertarget{final-words}{%
-\chapter{Final Words}\label{final-words}}
+\section{Final Words}\label{final-words}}
 
 We have finished a nice book.
 
