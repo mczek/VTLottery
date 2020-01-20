@@ -5,6 +5,7 @@ library(parallel)
 # GLOBAL VARIABLES
 N_SIMS <- 3
 N_CORES <- 3 
+path <- "./test.csv"
 
 createSapphire7Tickets <- function(){
   nTickets <- 420000
@@ -67,7 +68,9 @@ simSapphire7Game <- function(id = 1){
 
 
 simNGames_Sapphire7 <- function(nSims, nCores){
-  simResults <- mclapply(1:nSims, simSapphire7Game, mc.cores = nCores)
+  cl <- makeCluster(2)
+  clusterExport(cl=cl, varlist=c("createSapphire7Tickets", "simSapphire7Game", "data.table"))
+  simResults <- parLapply(cl, 1:nSims, simSapphire7Game)
   return(rbindlist(simResults))
 }
 
@@ -76,9 +79,5 @@ simNGames_Sapphire7 <- function(nSims, nCores){
 system.time({
   df <- simNGames_Sapphire7(N_SIMS, N_CORES)
 })
-fwrite(df, "Sapphire7Test.csv")
+fwrite(df, "path")
 
-df %>%
-  filter(ticketNum > 400000) %>%
-  ggplot(aes(x = ticketNum, y = ExpVal)) +
-  geom_point(aes(color = factor(`7777`)))
