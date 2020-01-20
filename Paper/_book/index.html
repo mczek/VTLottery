@@ -21,10 +21,10 @@
   <meta name="twitter:description" content="This is analysis of the Vermont Lottery." />
   
 
-<meta name="author" content="Michael Czekanski" />
+<meta name="author" content="Michael Czekanski and Alex Lyford" />
 
 
-<meta name="date" content="2020-01-16" />
+<meta name="date" content="2020-01-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -156,16 +156,16 @@ true
             <section class="normal" id="section-">
 <div id="header">
 <h1 class="title">The Vermont Lottery</h1>
-<p class="author"><em>Michael Czekanski</em></p>
-<p class="date"><em>2020-01-16</em></p>
+<p class="author"><em>Michael Czekanski and Alex Lyford</em></p>
+<p class="date"><em>2020-01-20</em></p>
 <div class="abstract">
 <p class="abstract">Abstract</p>
-The prevailing belief is that scrath tickets are not worth playing, and this belief is often true — but sometimes it isn’t. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.
+The prevailing belief is that scratch tickets are not worth playing, and this belief is often true — but sometimes it isn’t. In the Vermont Lottery specifically, we can identify times when scratch tickets are worth playing with an arbitrary level of confidence.
 </div>
 </div>
 <div id="introduction" class="section level1">
 <h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
-<p>The prevailing belief is that scrath tickets are not worth playing, and this belief is often true — but sometimes it isn’t. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.</p>
+<p>The prevailing belief is that scratch tickets are not worth playing, and this belief is often true — but sometimes it isn’t. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.</p>
 <!-- This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$. -->
 <!-- The **bookdown** package can be installed from CRAN or Github: -->
 <!-- ```{r eval=FALSE} -->
@@ -175,12 +175,46 @@ The prevailing belief is that scrath tickets are not worth playing, and this bel
 <!-- ``` -->
 <!-- Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`. -->
 <!-- To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.org/tinytex/>. -->
-<!-- ```{r include=FALSE} -->
-<!-- # automatically create a bib database for R packages -->
-<!-- knitr::write_bib(c( -->
-<!--   .packages(), 'bookdown', 'knitr', 'rmarkdown' -->
-<!-- ), 'packages.bib') -->
-<!-- ``` -->
+<p>df1 %&gt;%
+ggplot(aes(x = ticketNum, y = ExpVal)) +
+geom_point(aes(color = factor(X7777)))</p>
+<p>simSapphire7Game &lt;- function(){
+tickets &lt;- createSapphire7Tickets()
+nTickets &lt;- length(tickets)</p>
+<p>loser &lt;- NULL
+seven &lt;- NULL
+fifteen &lt;- NULL
+twenty_five &lt;- NULL
+seventy &lt;- NULL
+seven_hundred &lt;- NULL
+thousand &lt;- NULL
+seven_777 &lt;- NULL
+expVal &lt;- NULL</p>
+<p>for(i in 1:nTickets){
+print(i)
+tickets &lt;- tickets[-1]
+loser[i] &lt;-sum(tickets == 0)
+seven[i] &lt;- sum(tickets == 7)
+fifteen[i] &lt;- sum(tickets == 15)
+twenty_five[i] &lt;- sum(tickets == 25)
+seventy[i] &lt;- sum(tickets == 70)
+seven_hundred[i] &lt;- sum(tickets == 700)
+thousand[i] &lt;- sum(tickets == 1000)
+seven_777[i] &lt;- sum(tickets == 7777)
+expVal[i] &lt;- mean(tickets))
+}</p>
+<p>simData &lt;- data.frame(<code>Losers</code> = loser,
+<code>7</code> = seven,
+<code>15</code> = fifteen,
+<code>25</code> = twenty_five,
+<code>70</code> = seventy,
+<code>700</code> = seven_hundred,
+<code>1000</code> = thousand,
+<code>7777</code> = seven_777,
+<code>ExpVal</code> = expVal,
+<code>ticketNum</code> = 1:nTickets)
+return(simData)
+}</p>
 
 </div>
             </section>

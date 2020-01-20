@@ -3,8 +3,8 @@ library(data.table)
 library(parallel)
 
 # GLOBAL VARIABLES
-N_SIMS <- 1000
-N_CORES <- 20 
+N_SIMS <- 3
+N_CORES <- 3 
 
 createSapphire7Tickets <- function(){
   nTickets <- 420000
@@ -77,3 +77,8 @@ system.time({
   df <- simNGames_Sapphire7(N_SIMS, N_CORES)
 })
 fwrite(df, "Sapphire7Test.csv")
+
+df %>%
+  filter(ticketNum > 400000) %>%
+  ggplot(aes(x = ticketNum, y = ExpVal)) +
+  geom_point(aes(color = factor(`7777`)))

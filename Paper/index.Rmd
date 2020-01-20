@@ -35,3 +35,50 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+df1 %>%
+  ggplot(aes(x = ticketNum, y = ExpVal)) +
+  geom_point(aes(color = factor(X7777)))
+  
+  simSapphire7Game <- function(){
+  tickets <- createSapphire7Tickets()
+  nTickets <- length(tickets)
+  
+  loser <- NULL
+  seven <- NULL
+  fifteen <- NULL
+  twenty_five <- NULL
+  seventy <- NULL
+  seven_hundred <- NULL
+  thousand <- NULL
+  seven_777 <- NULL
+  expVal <- NULL
+  
+  for(i in 1:nTickets){
+    print(i)
+    tickets <- tickets[-1]
+    loser[i] <-sum(tickets == 0)
+    seven[i] <- sum(tickets == 7)
+    fifteen[i] <- sum(tickets == 15)
+    twenty_five[i] <- sum(tickets == 25)
+    seventy[i] <- sum(tickets == 70)
+    seven_hundred[i] <- sum(tickets == 700)
+    thousand[i] <- sum(tickets == 1000)
+    seven_777[i] <- sum(tickets == 7777)
+    expVal[i] <- mean(tickets))
+  }
+  
+  
+  
+  simData <- data.frame(`Losers` = loser,
+                        `7` = seven,
+                        `15` = fifteen,
+                        `25` = twenty_five,
+                        `70` = seventy,
+                        `700` = seven_hundred,
+                        `1000` = thousand,
+                        `7777` = seven_777,
+                        `ExpVal` = expVal,
+                        `ticketNum` = 1:nTickets)
+  return(simData)
+}

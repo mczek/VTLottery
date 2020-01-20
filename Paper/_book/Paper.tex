@@ -30,7 +30,7 @@
 \usepackage{hyperref}
 \hypersetup{
             pdftitle={The Vermont Lottery},
-            pdfauthor={Michael Czekanski},
+            pdfauthor={Michael Czekanski and Alex Lyford},
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
@@ -111,13 +111,13 @@
 \bibliographystyle{apalike}
 
 \title{The Vermont Lottery}
-\author{Michael Czekanski}
-\date{2020-01-16}
+\author{Michael Czekanski and Alex Lyford}
+\date{2020-01-20}
 
 \begin{document}
 \maketitle
 \begin{abstract}
-The prevailing belief is that scrath tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.
+The prevailing belief is that scratch tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times when scratch tickets are worth playing with an arbitrary level of confidence.
 \end{abstract}
 
 {
@@ -127,10 +127,57 @@ The prevailing belief is that scrath tickets are not worth playing, and this bel
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-The prevailing belief is that scrath tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.
+The prevailing belief is that scratch tickets are not worth playing, and this belief is often true --- but sometimes it isn't. In the Vermont Lottery specifically, we can identify times where scratch tickets are worth playing with an arbitrary level of confidence.
+
+df1 \%\textgreater{}\%
+ggplot(aes(x = ticketNum, y = ExpVal)) +
+geom\_point(aes(color = factor(X7777)))
+
+simSapphire7Game \textless{}- function()\{
+tickets \textless{}- createSapphire7Tickets()
+nTickets \textless{}- length(tickets)
+
+loser \textless{}- NULL
+seven \textless{}- NULL
+fifteen \textless{}- NULL
+twenty\_five \textless{}- NULL
+seventy \textless{}- NULL
+seven\_hundred \textless{}- NULL
+thousand \textless{}- NULL
+seven\_777 \textless{}- NULL
+expVal \textless{}- NULL
+
+for(i in 1:nTickets)\{
+print(i)
+tickets \textless{}- tickets{[}-1{]}
+loser{[}i{]} \textless{}-sum(tickets == 0)
+seven{[}i{]} \textless{}- sum(tickets == 7)
+fifteen{[}i{]} \textless{}- sum(tickets == 15)
+twenty\_five{[}i{]} \textless{}- sum(tickets == 25)
+seventy{[}i{]} \textless{}- sum(tickets == 70)
+seven\_hundred{[}i{]} \textless{}- sum(tickets == 700)
+thousand{[}i{]} \textless{}- sum(tickets == 1000)
+seven\_777{[}i{]} \textless{}- sum(tickets == 7777)
+expVal{[}i{]} \textless{}- mean(tickets))
+\}
+
+simData \textless{}- data.frame(\texttt{Losers} = loser,
+\texttt{7} = seven,
+\texttt{15} = fifteen,
+\texttt{25} = twenty\_five,
+\texttt{70} = seventy,
+\texttt{700} = seven\_hundred,
+\texttt{1000} = thousand,
+\texttt{7777} = seven\_777,
+\texttt{ExpVal} = expVal,
+\texttt{ticketNum} = 1:nTickets)
+return(simData)
+\}
 
 \hypertarget{intro}{%
 \section{Introduction}\label{intro}}
+
+Alex is very good with Github.
 
 You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
 
@@ -209,6 +256,8 @@ Here is a review of existing methods.
 \section{Methods}\label{methods}}
 
 We describe our methods in this chapter.
+
+Here are our methods.
 
 \hypertarget{applications}{%
 \section{Applications}\label{applications}}
