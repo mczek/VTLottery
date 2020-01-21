@@ -79,5 +79,5 @@ simNGames_Sapphire7 <- function(nSims, nCores){
 system.time({
   df <- simNGames_Sapphire7(N_SIMS, N_CORES)
 })
-fwrite(df, "path")
+fwrite(df, path)
 
