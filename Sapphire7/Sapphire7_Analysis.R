@@ -7,6 +7,7 @@ simData <- fread("Sapphire7Test.csv") %>%
   filter(!is.na(ExpVal))
 
 nTickets <- 420000
+cost <- 5
 
 # How many iterations enter a playable state?
 simData %>%
@@ -42,10 +43,15 @@ knowledgeData <- simData %>%
 
 
 # visualizes the tickets we would buy
+knowledgeData <- knowledgeData %>%
+  mutate(indicator = lower_bound > cost) 
+
 knowledgeData %>%
-  mutate(indicator = lower_bound > 5) %>%
   ggplot(aes(x = ticketNum, y = ExpVal)) +
   geom_point(aes(color = indicator)) +
   scale_color_colorblind() +
-  xlim(420000*.95, 420000)
+  xlim(420000*.95, 420000) +
+  geom_hline(yintercept = cost)
+  
+
   

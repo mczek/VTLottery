@@ -26,18 +26,20 @@ simSapphire7Game <- function(id = 1){
   tickets <- createSapphire7Tickets()
   nTickets <- length(tickets)
   
-  loser <- NULL
-  seven <- NULL
-  fifteen <- NULL
-  twenty_five <- NULL
-  seventy <- NULL
-  seven_hundred <- NULL
-  thousand <- NULL
-  seven_777 <- NULL
-  expVal <- NULL
+  loser <- numeric(nTickets)
+  seven <- numeric(nTickets)
+  fifteen <- numeric(nTickets)
+  twenty_five <- numeric(nTickets)
+  seventy <- numeric(nTickets)
+  seven_hundred <- numeric(nTickets)
+  thousand <- numeric(nTickets)
+  seven_777 <- numeric(nTickets)
+  expVal <- numeric(nTickets)
+  thisTicket <- numeric(nTickets)
   
   for(i in 1:nTickets){
     # print(i)
+    thisTicket[i] <- tickets[1]
     tickets <- tickets[-1]
     loser[i] <-sum(tickets == 0)
     seven[i] <- sum(tickets == 7)
