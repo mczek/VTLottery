@@ -57,5 +57,9 @@ knowledgeData %>%
   xlim(420000*.95, 420000) +
   geom_hline(yintercept = cost)
   
+#calculate our return if we played this game
+nTicketsBought <- sum(knowledgeData$indicator)
+costToBuy <- cost*nTicketsBought
+winnings <- sum(knowledgeData$thisTicket[knowledgeData$thisTicket])
 
   
