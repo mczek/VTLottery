@@ -13,9 +13,13 @@ cost <- 5
 simData %>%
   filter(!is.na(ExpVal)) %>%
   group_by(id) %>%
-  summarize(maxExpVal = max(ExpVal))
+  summarize(maxExpVal = max(ExpVal),
+            playable = maxExpVal > cost) %>%
+  .$playable %>%
+  mean()
+  
 
-simData %>%
+ssimData %>%
   filter(id == 2) %>%
   ggplot(aes(x = ticketNum, y = ExpVal)) + 
   geom_point()
