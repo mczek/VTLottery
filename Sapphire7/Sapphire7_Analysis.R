@@ -46,5 +46,6 @@ knowledgeData %>%
   mutate(indicator = lower_bound > 5) %>%
   ggplot(aes(x = ticketNum, y = ExpVal)) +
   geom_point(aes(color = indicator)) +
-  scale_color_colorblind()
+  scale_color_colorblind() +
+  xlim(420000*.95, 420000)
   

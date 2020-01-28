@@ -68,7 +68,7 @@ simSapphire7Game <- function(id = 1){
 
 
 simNGames_Sapphire7 <- function(nSims, nCores){
-  cl <- makeCluster(2)
+  cl <- makeCluster(nCores)
   clusterExport(cl=cl, varlist=c("createSapphire7Tickets", "simSapphire7Game", "data.table"))
   simResults <- parLapply(cl, 1:nSims, simSapphire7Game)
   return(rbindlist(simResults))
